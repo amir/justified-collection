@@ -12,6 +12,9 @@ lazy val V = new {
 }
 
 libraryDependencies ++= Seq(
-  "org.specs2" %% "specs2-core" % V.specs2 % Test,
-  "org.specs2" %% "specs2-scalacheck" % V.specs2 % Test
+  "org.scala-lang" % "scala-reflect"      % scalaVersion.value,
+  "org.specs2"     %% "specs2-core"       % V.specs2 % Test,
+  "org.specs2"     %% "specs2-scalacheck" % V.specs2 % Test
 )
+
+addCommandAlias("fmt", ";scalafmtAll;scalafmtSbt")
